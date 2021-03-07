@@ -1,0 +1,36 @@
+/* COLORS  */
+:root {
+  --site-bg: #f7cd75;
+  --wallets-bg: #f2f2f2;
+  --blue-price: #8898c6;
+  --green-price: #8ace5e;
+  --card-border-hr: #dedede;
+  --card-text: #727272;
+  --card-outline: #8793c6;
+  --balance-date: #b5b5b5;
+  --balance-plus: #eaeaea;
+}
+/* HTML */
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 15px;
+  background-color: var(--site-bg);
+}
+
+.container {
+  max-width: 1150px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}

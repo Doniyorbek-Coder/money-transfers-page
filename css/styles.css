@@ -9,6 +9,8 @@
   --card-outline: #8793c6;
   --balance-date: #b5b5b5;
   --balance-plus: #eaeaea;
+  --balance-description: #c6c6c6;
+  --scrollbar: rgba(0, 0, 0, 0.5);
 }
 /* HTML */
 html {
@@ -45,8 +47,9 @@ body {
 }
 
 .transfers-container {
-  max-width: 800px;
+  max-width: 840px;
   display: flex;
+  position: relative;
 }
 
 /* WALLETS */
@@ -54,11 +57,27 @@ body {
   width: 300px;
   background-color: var(--wallets-bg);
   padding: 40px;
+  padding-right: 32px;
   display: flex;
   flex-direction: column;
-  overflow: auto;
+  overflow-y: scroll;
   max-height: 450px;
 }
+
+.transfer-wallets::-webkit-scrollbar {
+  width: 8px;
+}
+.transfer-wallets::-webkit-scrollbar-thumb {
+  display: none;
+  border-radius: 4px;
+}
+.transfer-wallets::-webkit-scrollbar-thumb {
+  background: var(--scrollbar);
+}
+.transfer-wallets:hover::-webkit-scrollbar-thumb {
+  display: block;
+}
+
 .transfer-wallets-footer {
   display: flex;
   justify-content: space-between;
@@ -81,17 +100,15 @@ body {
   padding: 15px;
   padding-bottom: 8px;
   margin-top: 30px;
-  border: 1px var(--card-border-hr) solid;
-  border-radius: 5px;
+  border: 2px var(--card-border-hr) solid;
+  border-radius: 7px;
   background-color: #fff;
 }
 .transfer-wallet:hover {
-  outline-style: auto;
-  outline-color: var(--card-outline);
+  border-color: var(--card-outline);
 }
 .transfer-wallet:nth-child(3) {
-  outline-style: auto;
-  outline-color: var(--card-outline);
+  border-color: var(--card-outline);
 }
 .wallet-card {
   width: 60px;
@@ -112,13 +129,99 @@ body {
 }
 /* BALANCE */
 .transfer-balance {
+  padding: 40px;
+  padding-right: 32px;
   width: 500px;
   background-color: #fff;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  max-height: 450px;
 }
-
+.transfer-balance::-webkit-scrollbar {
+  width: 8px;
+}
+.transfer-balance::-webkit-scrollbar-thumb {
+  display: none;
+  border-radius: 4px;
+}
+.transfer-balance::-webkit-scrollbar-thumb {
+  background: var(--scrollbar);
+}
+.transfer-balance:hover::-webkit-scrollbar-thumb {
+  display: block;
+}
 .transfer-balance-footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px var(--card-border-hr) solid;
+  padding-bottom: 49px;
+  margin-bottom: 30px;
+}
+.transfer-balance-title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 20px;
+}
+.transfer-balance-amount {
+  font-size: 23px;
+  font-weight: 700;
+}
+
+/* PRODUCT-LIST */
+
+.product-list {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+}
+.product-item-minus {
+  background-image: url(../img/minus.svg);
+  width: 24px;
+  height: 24px;
+  border: 1px var(--balance-plus) solid;
+  border-radius: 50%;
+  background-position: 2px 0px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  margin-right: 30px;
+}
+.product-item-plus {
+  background-image: url(../img/plus-add.svg);
+  width: 24px;
+  height: 24px;
+  border: 1px var(--balance-plus) solid;
+  border-radius: 50%;
+  background-position: 3px 3px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  margin-right: 30px;
+}
+.product-item {
+  margin-right: auto;
+}
+.product-item-name {
+  margin: 0;
+  font-size: 18px;
+}
+.product-item-description {
+  color: var(--balance-description);
+  margin: 0;
+  line-height: 33px;
+}
+.product-item-price {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.blue-price {
+  color: var(--blue-price);
+}
+.green-price {
+  color: var(--green-price);
 }

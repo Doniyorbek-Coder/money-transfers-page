@@ -23,8 +23,17 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", "Arial", sans-serif;
-  font-size: 15px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
   background-color: var(--site-bg);
+}
+
+.site-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .container {
@@ -37,8 +46,79 @@ body {
 
 .transfers-container {
   max-width: 800px;
+  display: flex;
 }
+
+/* WALLETS */
 .transfer-wallets {
-  background-color: var(--wallets-bg);
   width: 300px;
+  background-color: var(--wallets-bg);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  max-height: 450px;
+}
+.transfer-wallets-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.transfer-wallets-title {
+  font-weight: 500;
+  font-size: 20px;
+  margin: 0;
+}
+.transfer-wallets-plus {
+  background-image: url(../img/plus.svg);
+  width: 24px;
+  height: 24px;
+}
+.transfer-wallet {
+  color: var(--card-text);
+  padding: 15px;
+  padding-bottom: 8px;
+  margin-top: 30px;
+  border: 1px var(--card-border-hr) solid;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.transfer-wallet:hover {
+  outline-style: auto;
+  outline-color: var(--card-outline);
+}
+.transfer-wallet:nth-child(3) {
+  outline-style: auto;
+  outline-color: var(--card-outline);
+}
+.wallet-card {
+  width: 60px;
+  height: 35.2px;
+  margin-bottom: 12px;
+}
+.visa {
+  background-image: url(../img/visa.svg);
+}
+.masterCard {
+  background-image: url(../img/mastercard.svg);
+}
+.maestro {
+  background-image: url(../img/maestro.svg);
+}
+.wallet-number {
+  font-size: 15px;
+}
+/* BALANCE */
+.transfer-balance {
+  width: 500px;
+  background-color: #fff;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.transfer-balance-footer {
+  display: flex;
+  justify-content: space-between;
 }
